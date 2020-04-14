@@ -14,8 +14,6 @@ export default function App(props) {
     <main className='App'>
       <Header />
       <div className='main-content'>
-
-
         {/* ROUTE 1 > MAIN ROUTE | SHOWS ALL FOLDERS AND NOTES*/}
         <Route exact path="/" render={(routeProps) => <FolderList folders={props.store.folders} highlightTarget={null} {...routeProps} />} />
         <Route exact path="/" render={(routeProps) => <NoteList notes={props.store.notes} {...routeProps} />} />
