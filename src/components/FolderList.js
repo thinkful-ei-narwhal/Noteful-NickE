@@ -1,6 +1,7 @@
 import React from 'react';
 import AddFolder from './AddFolder'
 import Folder from './Folder'
+import { Link } from 'react-router-dom';
 
 export default class FolderList extends React.Component {
   render() {
@@ -10,7 +11,7 @@ export default class FolderList extends React.Component {
       if (this.props.highlightTarget === folder) {
         highlightTarget = true;
       }
-      return <Folder key={folder.id} folderId={folder.id} name={folder.name} highlightTarget={highlightTarget} />
+      return <Link key={folder.id} to={`/folder/${folder.id}`}><Folder folderId={folder.id} name={folder.name} highlightTarget={highlightTarget} /></Link>;
     });
 
     return (
