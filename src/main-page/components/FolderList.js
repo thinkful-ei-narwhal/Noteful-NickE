@@ -4,8 +4,13 @@ import Folder from './Folder'
 
 export default class FolderList extends React.Component {
   render() {
+
     const folders = this.props.folders.map(folder => {
-      return <Folder key={folder.id} folderId={folder.id} name={folder.name} />
+      let highlightTarget = false;
+      if (this.props.highlightTarget === folder) {
+        highlightTarget = true;
+      }
+      return <Folder key={folder.id} folderId={folder.id} name={folder.name} highlightTarget={highlightTarget} />
     });
 
     return (
